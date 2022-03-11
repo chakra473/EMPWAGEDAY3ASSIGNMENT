@@ -6,10 +6,16 @@ namespace empwageassignment
     {
         static void Main(string[] args)
         {
-            int isPresent = 1, empHrs, empRatePerHr = 20, salary;
+            int isPartTime = 1, IsFullTime = 2, empHrs, empRatePerHr = 20, salary, randomCheck;
             Random rand = new Random();
-            int randomCheck = rand.Next(0, 2);
-            if (randomCheck == isPresent)
+            randomCheck = rand.Next(0, 3);
+            if (randomCheck == isPartTime)
+            {
+                empHrs = 4;
+                salary = empHrs * empRatePerHr;
+                Console.WriteLine($"salary is {salary}");
+            }
+            else if (randomCheck == IsFullTime)
             {
                 empHrs = 8;
                 salary = empHrs * empRatePerHr;
