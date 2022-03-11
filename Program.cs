@@ -6,23 +6,31 @@ namespace empwageassignment
     {
         static void Main(string[] args)
         {
-            int isPartTime = 1, isPresent = 2, empHrs, empRatePerHr = 20, salary;
-            Random rand = new Random();
-            int randomCheck = rand.Next(0, 3);
-            switch (randomCheck)
+            int isPartTime = 1, randomCheck, isFullTime = 2, totalSalary = 0, salary, ratePerHr = 20, numOfWorkingDays = 20, day, empHrs;
+
+            for (day = 1; day <= numOfWorkingDays; day++)
             {
-                case 1:
-                    empHrs = 4;
-                    break;
-                case 2:
-                    empHrs = 8;
-                    break;
-                default:
-                    empHrs = 0;
-                    break;
+                Random random = new Random();
+                randomCheck = random.Next(0, 3);
+                switch (randomCheck)
+                {
+                    case 2:
+                        empHrs = 8;
+                        break;
+
+                    case 1:
+                        empHrs = 4;
+                        break;
+                    default:
+                        empHrs = 0;
+                        break;
+                }
+
+                salary = empHrs * ratePerHr;
+                totalSalary = totalSalary + salary;
+                Console.WriteLine($"totalsalary after day{day} is {totalSalary}");
+
             }
-            salary = empRatePerHr * empHrs;
-            Console.WriteLine($"salary is {salary}");
         }
     }
 }
