@@ -7,11 +7,12 @@ namespace empwageassignment
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee wage calculation!");
-            EmpWageCalculation();
+            EmpWageCalculation("reliance",100,30,200);
+            EmpWageCalculation("dmart", 200, 25, 200);
         }
-        public static void EmpWageCalculation()
+        public static void EmpWageCalculation(string company,int ratePerHr,int numOfWorkingDays,int maxWorkingHrs)
         {
-            int isPartTime = 1, randomCheck, isFullTime = 2, totalSalary = 0, salary, ratePerHr = 20, numOfWorkingDays = 20, day = 1,maxWorkingHrs=200, empHrs=0;
+            int isPartTime = 1, randomCheck, isFullTime = 2, totalSalary = 0, salary,day = 1, empHrs=0;
             while (day <= numOfWorkingDays&&empHrs<=maxWorkingHrs)
             {
                 Random random = new Random();
@@ -35,6 +36,7 @@ namespace empwageassignment
                 Console.WriteLine($"totalsalary after day{day} is {totalSalary}");
                 day++;
             }
+            Console.WriteLine("total employee Wage for company "+company+" is "+totalSalary);
         }
 
     }
